@@ -6,7 +6,7 @@ import { AutomovilService } from './automovil.service';
 export class AutomovilController {
     constructor(private serviceAuto: AutomovilService){}
 
-    @Post()
+    @Post('/crear')
     async agregarAutomovil(@Body() automovilDTO: AutoDTO, @Res() res ){
         try{
             const crearAuto = await this.serviceAuto.agregarAutomovil(automovilDTO)
